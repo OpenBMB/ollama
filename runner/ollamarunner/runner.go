@@ -919,3 +919,15 @@ func Execute(args []string) error {
 
 	return nil
 }
+
+func Omni(input string, path string) string {
+	if input == "" {
+		return "输入字符串不能为空"
+	}
+
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		return "路径不存在"
+	}
+
+	return "你好，欢迎使用omni"
+}
